@@ -31,9 +31,10 @@ Some pseudo C code to use it:
     }
     send_byte(action);
 ```
+### Server communication
+After connecting to the server you have to send in a one-line string wich will be your bots "display name", ex. "MyBot\n".
 
-On connect you will receive a JSON object giving you your ID and describing the
-map:
+The server will then respond with a JSON-object wich contains your "player id" as an integer, and the "map"-object containing tiles, modifiers and the actuall track (as "path") that your bot has to follow to complete the laps.
 ```JSON
 {
     "id": 0,
